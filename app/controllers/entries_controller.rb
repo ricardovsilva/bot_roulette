@@ -1,4 +1,4 @@
-class EntriesController < ApplicationController
+class EntriesController < AuthenticatedController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
   # GET /entries
