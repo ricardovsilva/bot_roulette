@@ -14,6 +14,7 @@
     <% @roulette_wheels.each do |roulette_wheel| %>
       <tr>
         <td><%= roulette_wheel.name %></td>
+        <td><%= link_to 'Show', roulette_wheel %></td>
         <td><%= link_to 'Edit', edit_roulette_wheel_path(roulette_wheel) %></td>
         <td><%= link_to 'Destroy', roulette_wheel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

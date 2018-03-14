@@ -6,7 +6,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load
+begin
+  Dotenv::Railtie.load
+rescue NameError
+  #dotenv should be used only in development
+end
 
 module Roulette
   class Application < Rails::Application

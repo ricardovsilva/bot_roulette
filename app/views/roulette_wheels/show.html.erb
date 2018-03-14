@@ -1,9 +1,21 @@
-<p id="notice"><%= notice %></p>
+<% @entries.each do |entry| %>
+  <div class="js-entry" data-title="<%= entry.title %>" data-probability="<%= entry.probability %>" data-image="<%= entry.image.url %>"></div>
+<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @roulette_wheel.name %>
-</p>
+<div class="roulette-container">
+	<div class="roulette" style="overflow: hidden; height: 128px;">
+      <div class="roulette-inner" style="position: relative; top: 0px;">
+        <% @entries.each do |entry| %>
+          <img src="<%= entry.image.url %>" style="display: block; width: 512px; height: 512px;">
+        <% end %>
+      </div>
+	</div>
+</div>
 
-<%= link_to 'Edit', edit_roulette_wheel_path(@roulette_wheel) %> |
-<%= link_to 'Back', roulette_wheels_path %>
+<input type="button" class="js-spin-on-click" value="Spin" style="position: absolute; left: 32px; top: 560px;"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+<script src="/js/vendor/random.min.js"></script>
+<script src="/js/vendor/roulette.js"></script>
+<script src="/js/index.js"></script>

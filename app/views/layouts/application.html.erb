@@ -9,11 +9,6 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <h1>Welcome <%= current_user.name %></h1>
-      <img src="<%= current_user.image_url %>" alt="">
-    <% end %>
-    <h1> </h1>
     <p class="notice"><%= notice %></p>
     <%= yield %>
   </body>

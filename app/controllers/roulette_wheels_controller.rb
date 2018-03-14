@@ -1,4 +1,5 @@
-class RouletteWheelsController < ApplicationController
+class RouletteWheelsController < AuthenticatedController
+
   before_action :set_roulette_wheel, only: [:show, :edit, :update, :destroy]
 
   # GET /roulette_wheels
@@ -10,6 +11,7 @@ class RouletteWheelsController < ApplicationController
   # GET /roulette_wheels/1
   # GET /roulette_wheels/1.json
   def show
+    @entries = Entry.where(active: true, user_id: current_user.id)
   end
 
   # GET /roulette_wheels/new
