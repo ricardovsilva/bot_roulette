@@ -1,5 +1,6 @@
 class EntriesController < AuthenticatedController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  before_action :set_roulettes, only: [:new, :edit, :update]
 
   # GET /entries
   # GET /entries.json
@@ -69,8 +70,12 @@ class EntriesController < AuthenticatedController
       @entry = Entry.find(params[:id])
     end
 
+    def set_roulettes
+      @roulettes = RouletteWheel.where(user_id: current_user.id)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:title, :probability, :image, :active)
+      params.require(:entry).permit(:title, :probability, :image, :active, :roulette_wheel_id)
     end
 end

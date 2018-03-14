@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Roulette Wheels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roulette_wheels.each do |roulette_wheel| %>
+      <tr>
+        <td><%= roulette_wheel.name %></td>
+        <td><%= link_to 'Edit', edit_roulette_wheel_path(roulette_wheel) %></td>
+        <td><%= link_to 'Destroy', roulette_wheel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Roulette Wheel', new_roulette_wheel_path %>

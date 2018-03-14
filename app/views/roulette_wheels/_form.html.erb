@@ -1,0 +1,22 @@
+<%= form_with(model: roulette_wheel, local: true) do |form| %>
+  <% if roulette_wheel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(roulette_wheel.errors.count, "error") %> prohibited this roulette_wheel from being saved:</h2>
+
+      <ul>
+      <% roulette_wheel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :roulette_wheel_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

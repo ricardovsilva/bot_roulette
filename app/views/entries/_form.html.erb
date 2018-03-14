@@ -31,6 +31,11 @@
     <%= form.check_box :active, { checked: true }, id: :active  %>
   </div>
 
+  <div class="field">
+    <%= form.label :roulette %>
+    <%= form.collection_select(:roulette_wheel_id, @roulettes, :id, :name, { :prompt => 'Choose a roulette', :selected => @entry.roulette_wheel_id }) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
