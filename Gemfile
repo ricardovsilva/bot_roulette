@@ -9,6 +9,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'omniauth-twitch'
 gem 'dragonfly'
+gem "paperclip", "~> 5.2.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use Puma as the app server
@@ -51,6 +52,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'aws-sdk', '~> 2.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

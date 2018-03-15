@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180315195233) do
+ActiveRecord::Schema.define(version: 20180315213432) do
 
   create_table "entries", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 20180315195233) do
     t.boolean "active"
     t.integer "user_id"
     t.integer "roulette_wheel_id"
+    t.string "sound_file_name"
+    t.string "sound_content_type"
+    t.integer "sound_file_size"
+    t.datetime "sound_updated_at"
     t.index ["roulette_wheel_id"], name: "index_entries_on_roulette_wheel_id"
     t.index ["user_id"], name: "index_entries_on_user_id"
   end

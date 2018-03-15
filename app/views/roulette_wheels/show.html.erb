@@ -9,7 +9,10 @@
 	<div class="roulette" style="overflow: hidden; height: 128px;">
       <div class="roulette-inner" style="position: relative; top: 0px;">
         <% @roulette_wheel.entries.each do |entry| %>
-          <img src="<%= entry.image.url %>" style="margin: 5px; display: block; width: <%= @roulette_wheel.width %>px; height: <%= @roulette_wheel.height %>px;">
+          <img 
+            src="<%= entry.image.url %>"
+            style="margin: 5px; display: block; width: <%= @roulette_wheel.width %>px; height: <%= @roulette_wheel.height %>px;"
+            data-sound="<%= entry.sound.url %>"/>
         <% end %>
       </div>
 	</div>
@@ -21,4 +24,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
 <script src="/js/vendor/random.min.js"></script>
 <script src="/js/vendor/roulette.js"></script>
+<script src="/js/vendor/jquery.playSound.js"></script>
 <script src="/js/roulette_show.js"></script>

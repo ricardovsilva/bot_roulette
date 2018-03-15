@@ -7,7 +7,9 @@ $(function(){
 		},
 		slowDownCallback : function() {
 		},
-		stopCallback : function($stopElm) {
+		stopCallback : function(stopElm) {
+      soundUrl = $(stopElm).data('sound');
+      $.playSound(soundUrl);
     },
     speed : $('.js-roulette-speed').val(),
     duration : $('.js-roulette-duration').val(),

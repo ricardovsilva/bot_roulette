@@ -2,28 +2,20 @@ class EntriesController < AuthenticatedController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
   before_action :set_roulettes, only: [:new, :edit, :update]
 
-  # GET /entries
-  # GET /entries.json
   def index
     @entries = Entry.all
   end
 
-  # GET /entries/1
-  # GET /entries/1.json
   def show
   end
 
-  # GET /entries/new
   def new
     @entry = Entry.new
   end
 
-  # GET /entries/1/edit
   def edit
   end
 
-  # POST /entries
-  # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
     @entry.user_id = current_user.id
@@ -39,8 +31,6 @@ class EntriesController < AuthenticatedController
     end
   end
 
-  # PATCH/PUT /entries/1
-  # PATCH/PUT /entries/1.json
   def update
     respond_to do |format|
       if @entry.update(entry_params)
@@ -53,8 +43,6 @@ class EntriesController < AuthenticatedController
     end
   end
 
-  # DELETE /entries/1
-  # DELETE /entries/1.json
   def destroy
     @entry.active = false
     @entry.save!
@@ -65,7 +53,6 @@ class EntriesController < AuthenticatedController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_entry
       @entry = Entry.find(params[:id])
     end
@@ -74,8 +61,14 @@ class EntriesController < AuthenticatedController
       @roulettes = RouletteWheel.where(user_id: current_user.id)
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:title, :probability, :image, :active, :roulette_wheel_id)
+      params.require(:entry).permit(
+        :title,
+        :probability,
+        :image,
+        :active,
+        :roulette_wheel_id,
+        :sound
+      )
     end
 end
