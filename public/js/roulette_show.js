@@ -9,7 +9,7 @@ $(function(){
 		},
 		stopCallback : function($stopElm) {
     },
-    speed : 10,
+    speed : $('.js-roulette-speed').val(),
     duration : 3,
     stopImageNumber : 0,
 	}

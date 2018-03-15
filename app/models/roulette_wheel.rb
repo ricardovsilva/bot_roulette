@@ -6,5 +6,6 @@ class RouletteWheel < ApplicationRecord
   def set_defaults
     self.width ||= 512;
     self.height ||= 512;
+    self.speed ||= 10;
   end
 end
