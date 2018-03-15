@@ -1,4 +1,6 @@
 <input type="hidden" value="<%= @roulette_wheel.speed %>" class="js-roulette-speed"/>
+<input type="hidden" value="<%= @roulette_wheel.duration %>" class="js-roulette-duration"/>
+
 <% @roulette_wheel.entries.each do |entry| %>
   <div class="js-entry" data-title="<%= entry.title %>" data-probability="<%= entry.probability %>" data-image="<%= entry.image.url %>"></div>
 <% end %>

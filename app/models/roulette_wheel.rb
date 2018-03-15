@@ -7,5 +7,6 @@ class RouletteWheel < ApplicationRecord
     self.width ||= 512;
     self.height ||= 512;
     self.speed ||= 10;
+    self.duration ||= 3;
   end
 end

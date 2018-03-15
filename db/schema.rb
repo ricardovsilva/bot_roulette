@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180315161717) do
+ActiveRecord::Schema.define(version: 20180315195233) do
 
   create_table "entries", force: :cascade do |t|
     t.string "title"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20180315161717) do
     t.integer "width"
     t.integer "height"
     t.integer "speed"
+    t.integer "duration"
     t.index ["user_id"], name: "index_roulette_wheels_on_user_id"
   end
 

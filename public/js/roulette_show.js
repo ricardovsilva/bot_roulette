@@ -10,7 +10,7 @@ $(function(){
 		stopCallback : function($stopElm) {
     },
     speed : $('.js-roulette-speed').val(),
-    duration : 3,
+    duration : $('.js-roulette-duration').val(),
     stopImageNumber : 0,
 	}
   
@@ -45,15 +45,6 @@ $(function(){
   $('.js-spin-on-click').click(() => {
     $.spin();
   })
-
-  /*$('#stopImageNumber').spinner('value', 0);
-  updateStopImageNumber($('#stopImageNumber').spinner('value'));		
-
-  $('.image_sample').children().click(function(){
-    var stopImageNumber = $(this).attr('data-value');
-    $('#stopImageNumber').spinner('value', stopImageNumber);
-    updateStopImageNumber(stopImageNumber);
-  });*/
 
   $('.roulette-container').css('display', 'none');
 });
