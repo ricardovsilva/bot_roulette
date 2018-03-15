@@ -1,3 +1,4 @@
+<input type="hidden" value="<%= @roulette_wheel.speed %>" class="js-roulette-speed"/>
 <% @roulette_wheel.entries.each do |entry| %>
   <div class="js-entry" data-title="<%= entry.title %>" data-probability="<%= entry.probability %>" data-image="<%= entry.image.url %>"></div>
 <% end %>
@@ -18,4 +19,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
 <script src="/js/vendor/random.min.js"></script>
 <script src="/js/vendor/roulette.js"></script>
-<script src="/js/index.js"></script>
+<script src="/js/roulette_show.js"></script>
