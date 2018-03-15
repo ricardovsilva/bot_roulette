@@ -1,18 +1,18 @@
-<% @entries.each do |entry| %>
+<% @roulette_wheel.entries.each do |entry| %>
   <div class="js-entry" data-title="<%= entry.title %>" data-probability="<%= entry.probability %>" data-image="<%= entry.image.url %>"></div>
 <% end %>
 
 <div class="roulette-container">
 	<div class="roulette" style="overflow: hidden; height: 128px;">
       <div class="roulette-inner" style="position: relative; top: 0px;">
-        <% @entries.each do |entry| %>
-          <img src="<%= entry.image.url %>" style="display: block; width: 512px; height: 512px;">
+        <% @roulette_wheel.entries.each do |entry| %>
+          <img src="<%= entry.image.url %>" style="margin: 5px; display: block; width: <%= @roulette_wheel.width %>px; height: <%= @roulette_wheel.height %>px;">
         <% end %>
       </div>
 	</div>
 </div>
 
-<input type="button" class="js-spin-on-click" value="Spin" style="position: absolute; left: 32px; top: 560px;"/>
+<input type="button" class="js-spin-on-click" value="Spin" style="margin-top: 5px;"/>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
