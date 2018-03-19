@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180315213432) do
+ActiveRecord::Schema.define(version: 20180319160454) do
 
   create_table "entries", force: :cascade do |t|
     t.string "title"
     t.integer "probability"
-    t.string "image_uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "active"
@@ -25,6 +24,10 @@ ActiveRecord::Schema.define(version: 20180315213432) do
     t.string "sound_content_type"
     t.integer "sound_file_size"
     t.datetime "sound_updated_at"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["roulette_wheel_id"], name: "index_entries_on_roulette_wheel_id"
     t.index ["user_id"], name: "index_entries_on_user_id"
   end

@@ -22,8 +22,9 @@
   </div>
 
   <div class="field">
-    <label for="image_uid">Imagem</label>
+    <label for="image">Imagem</label>
     <%= form.file_field :image %>
+    <img src="<%= entry.image.url %>" />
   </div>
 
   <div class="field">
@@ -39,6 +40,10 @@
   <div class="field">
     <%= form.label :sound %>
     <%= form.file_field :sound %>
+    <br/>
+    <audio controls>
+      <source src="<%= entry.sound.url %>" type="audio/mp3">
+    </audio>
   </div>
 
   <div class="actions">
