@@ -36,6 +36,15 @@
     <%= form.number_field :duration, id: :roulette_wheel_duration %>
   </div>
 
+  <div class="field">
+    <%= form.label :spinning_sound %>
+    <%= form.file_field :spinning_sound %>
+    <br/>
+    <audio controls>
+      <source src="<%= roulette_wheel.spinning_sound.url %>" type="audio/mp3">
+    </audio>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

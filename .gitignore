@@ -23,5 +23,5 @@
 
 .byebug_history
 *.env
-public/system/entries/*
+public/system/*
 /vendor/*

@@ -1,14 +1,19 @@
 $(function(){
   var mt = Random.engines.mt19937();
   mt.autoSeed();
+  var spinningSoundUrl = $('.js-roulette-sound').val();
+  var spinningSound;
 
   var p = {
 		startCallback : function() {
+      spinningSound = spinningSoundUrl ? new Audio(spinningSoundUrl) : { play: function(){}, stop: function(){}};
+      spinningSound.play();
 		},
 		slowDownCallback : function() {
 		},
 		stopCallback : function(stopElm) {
       soundUrl = $(stopElm).data('sound');
+      spinningSound.pause();
       $.playSound(soundUrl);
     },
     speed : $('.js-roulette-speed').val(),

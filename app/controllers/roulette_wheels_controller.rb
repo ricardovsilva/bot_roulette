@@ -57,6 +57,6 @@ class RouletteWheelsController < AuthenticatedController
     end
 
     def roulette_wheel_params
-      params.require(:roulette_wheel).permit(:user_id, :name, :width, :height, :speed, :duration)
+      params.require(:roulette_wheel).permit(:user_id, :name, :width, :height, :speed, :duration, :spinning_sound)
     end
 end
