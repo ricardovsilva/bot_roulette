@@ -3,7 +3,7 @@ class EntriesController < AuthenticatedController
   before_action :set_roulettes, only: [:new, :edit, :update]
 
   def index
-    @entries = Entry.all
+    @entries = Entry.where(user_id: current_user.id)
   end
 
   def show

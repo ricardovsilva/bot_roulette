@@ -3,7 +3,7 @@ class RouletteWheelsController < AuthenticatedController
   before_action :set_roulette_wheel, only: [:show, :edit, :update, :destroy]
 
   def index
-    @roulette_wheels = RouletteWheel.all
+    @roulette_wheels = RouletteWheel.where(user_id: current_user.id)
   end
 
   def show
