@@ -44,7 +44,7 @@ $(function(){
        possibilities.push(i);
     });
     
-    imageIndex = mt(0, possibilities.length - 1);
+    imageIndex = Random.integer(0, possibilities.length - 1)(mt);
     setImageIndex(possibilities[imageIndex]);
     rouletter.roulette('start');
   }
