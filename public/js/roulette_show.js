@@ -43,10 +43,15 @@ $(function(){
       for(var j = 0; j < $(entry).data('probability'); j++)
        possibilities.push(i);
     });
-    
-    imageIndex = Random.integer(0, possibilities.length - 1)(mt);
-    setImageIndex(possibilities[imageIndex]);
-    rouletter.roulette('start');
+
+    min = 0;
+    max = possibilities.length - 1;
+    $.get(`https://www.random.org/sequences/?min=${min}&max=${max}&col=1&format=plain&rnd=new`,
+      function(data) {
+        imageIndex = data.split("\n")[0];
+        setImageIndex(possibilities[imageIndex]);
+        rouletter.roulette('start');
+    });
   }
 
   $('.js-spin-on-click').click(() => {
